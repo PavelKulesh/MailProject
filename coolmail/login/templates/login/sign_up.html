@@ -1,0 +1,30 @@
+{% extends 'login/layout.html' %}
+
+{% block title %}SignUp{% endblock %}
+
+{% block content %}
+    <div class="home_up">
+        <strong>Sign Up</strong>
+    </div>
+    <div class="input_name">
+        <input maxlength="30" size="40" placeholder="Name" class="name">
+    </div>
+    <div class="input_surname">
+        <input maxlength="30" size="40" placeholder="Surname" class="surname">
+    </div>
+    <div class="input_log">
+        <input maxlength="30" size="40" placeholder="Login" class="log">
+    </div>
+    <div class="input_passw">
+        <input maxlength="30" size="40" placeholder="Password" class="passw">
+    </div>
+    <div class="input_passwconf">
+        <input maxlength="30" size="40" placeholder="Password Confirmation" class="passwconf">
+    </div>
+    <div class="sign_up">
+        <button class="btn_up">Sign Up</button>
+    </div>
+    <div class="back">
+        <button class="btn_back">Back</button>
+    </div>
+{% endblock %}

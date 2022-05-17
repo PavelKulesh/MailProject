@@ -1,0 +1,52 @@
+.home_in {
+    text-align: center;
+    margin-top: 280px;
+    font-size: 50px;
+}
+
+.input_log {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input_passw {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.log {
+    height: 40px;
+    border-radius: 10px;
+}
+
+.passw {
+    height: 40px;
+    border-radius: 10px;
+}
+
+.back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn_back {
+    background-color: #141414;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    width: 100px;
+    height: 30px;
+    border-radius: 25px;
+    margin-top: 20px;
+}
+
+.btn_back:hover {
+    color: #b0b0b0;
+    transform: scale(1.05);
+    transition: all .3s ease;
+}
