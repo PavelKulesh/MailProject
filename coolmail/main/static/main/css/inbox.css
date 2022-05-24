@@ -1,0 +1,47 @@
+.refresh {
+    position: absolute;
+    width: 230px;
+    height: 50px;
+    left:1400px;
+    top: 170px;
+    font-size: 20px;
+    text-align: right;
+}
+
+.btn_refresh {
+    background-color: #141414;
+    color: white;
+    text-align: center;
+    font-size: 17px;
+    width: 150px;
+    height: 40px;
+    border-radius: 25px;
+    margin-left: 25px;
+}
+
+.btn_refresh:hover {
+    color: #b0b0b0;
+    transform: scale(1.05);
+    transition: transform .3s ease;
+}
+
+.emails_list {
+    position: absolute;
+    width: 1000px;
+    height: auto;
+    left: 450px;
+    top: 230px;
+}
+
+.email {
+    font-size: 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background: #e8e8e8;
+}
+
+.email:hover {
+    background: #b0b0b0;
+    transform: scale(1.03);
+    transition: transform .3s ease;
+}

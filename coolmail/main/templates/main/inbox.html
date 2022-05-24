@@ -1,0 +1,17 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Inbox{% endblock %}
+
+{% block content %}
+    <div class="refresh">
+        <a href="{% url 'inbox' %}"><button class="btn_refresh">Refresh</button></a>
+    </div>
+    <div class="emails_list">
+        {% for el in emails %}
+            <div class="email">
+                <b>pavelkulesh@coolmail.com {{ el.topic }}</b> {{ el.text|slice:":20" }} <b>{{ el.date }}</b>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,123 @@
+.btn_inbox {
+    background-color: #141414;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    width: 300px;
+    height: 70px;
+    border-radius: 25px;
+    margin-top: 100px;
+}
+
+.btn_inbox:hover {
+    color: #b0b0b0;
+    transform: scale(1.05);
+    transition: transform .3s ease;
+}
+
+.btn_sent {
+    background-color: #141414;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    width: 300px;
+    height: 70px;
+    border-radius: 25px;
+    margin-top: 30px;
+}
+
+.btn_sent:hover {
+    color: #b0b0b0;
+    transform: scale(1.05);
+    transition: transform .3s ease;
+}
+
+.btn_trash {
+    background-color: #141414;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    width: 300px;
+    height: 70px;
+    border-radius: 25px;
+    margin-top: 30px;
+}
+
+.btn_trash:hover {
+    color: #b0b0b0;
+    transform: scale(1.05);
+    transition: transform .3s ease;
+}
+
+.btn_search {
+    background-color: #141414;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    width: 300px;
+    height: 70px;
+    border-radius: 25px;
+    margin-top: 30px;
+}
+
+.btn_search:hover {
+    color: #b0b0b0;
+    transform: scale(1.05);
+    transition: transform .3s ease;
+}
+
+.btn_write {
+    background-color: #141414;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    width: 300px;
+    height: 70px;
+    border-radius: 25px;
+    margin-top: 100px;
+}
+
+.btn_write:hover {
+    color: #b0b0b0;
+    transform: scale(1.05);
+    transition: transform .3s ease;
+}
+
+li {
+    list-style-type: none;
+}
+
+.logo {
+    font-size: 50px;
+    margin-top: 50px;
+    margin-left: 75px;
+    width: 250px;
+    height: 75px;
+}
+
+.btn_logout {
+    background-color: #141414;
+    color: white;
+    text-align: center;
+    font-size: 17px;
+    width: 200px;
+    height: 40px;
+    border-radius: 25px;
+    margin-left: 25px;
+}
+
+.btn_logout:hover {
+    color: #b0b0b0;
+    transform: scale(1.05);
+    transition: transform .3s ease;
+}
+
+.address {
+    position: absolute;
+    width: 700px;
+    height: 75px;
+    left:1100px;
+    top: 70px;
+    font-size: 20px;
+    text-align: right;
+}

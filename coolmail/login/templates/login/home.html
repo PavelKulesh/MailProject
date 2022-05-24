@@ -7,9 +7,9 @@
         <strong>Welcome to CoolMail</strong>
     </div>
     <div class="sign_in">
-        <button class="btn_in">Sign In</button>
+        <a href="{% url 'sign-in' %}"><button class="btn_in">Sign In</button></a>
     </div>
     <div class="sign_up">
-        <button class="btn_up">Sign Up</button>
+        <a href="{% url 'sign-up' %}"><button class="btn_up">Sign Up</button></a>
     </div>
 {% endblock %}
