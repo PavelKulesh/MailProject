@@ -1,9 +1,9 @@
 from django.shortcuts import render
-from .models import Email
+from .models import Emails
 
 
 def inbox(request):
-    emails = Email.objects.all()
+    emails = Emails.objects.all()
     return render(request, 'main/inbox.html', {'emails': emails})
 
 
