@@ -2,16 +2,19 @@
 
 {% block title %}Inbox{% endblock %}
 
+{% block folder %}Inbox{% endblock %}
+
 {% block content %}
     <div class="refresh">
         <a href="{% url 'inbox' %}"><button class="btn_refresh">Refresh</button></a>
     </div>
     <div class="emails_list">
-        {% for el in emails %}
+        {% for email in emails %}
             <div class="email">
-                <b>pavelkulesh@coolmail.com {{ el.topic }}</b> {{ el.text|slice:":20" }} <b>{{ el.date }}</b>
+                <a href="{% url 'email' email.id %}"><b>{{ email.topic }}</b> {{ email.text|slice:":20" }} <b>{{ email.date }}</b></a>
             </div>
+        {% empty %}
+            MailBox is empty
         {% endfor %}
     </div>
-
 {% endblock %}

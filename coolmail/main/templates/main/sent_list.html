@@ -1,0 +1,17 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Sent{% endblock %}
+
+{% block folder %}Sent{% endblock %}
+
+{% block content %}
+    <div class="emails_list">
+        {% for email in emails %}
+            <div class="email">
+                <a href="{% url 'email' email.id %}"><b>{{ email.topic }}</b> {{ email.text|slice:":20" }} <b>{{ email.date }}</b></a>
+            </div>
+        {% empty %}
+            MailBox is empty
+        {% endfor %}
+    </div>
+{% endblock %}

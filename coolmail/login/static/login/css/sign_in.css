@@ -19,11 +19,13 @@
 }
 
 .log {
+    width: 400px;
     height: 40px;
     border-radius: 10px;
 }
 
 .passw {
+    width: 400px;
     height: 40px;
     border-radius: 10px;
 }
@@ -49,4 +51,12 @@
     color: #b0b0b0;
     transform: scale(1.05);
     transition: transform .3s ease;
+}
+
+.error {
+    margin-top: 5px;
+    height: 5px;
+    text-align: center;
+    color: red;
+    font-size: 15px;
 }

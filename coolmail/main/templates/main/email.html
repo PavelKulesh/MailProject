@@ -1,0 +1,27 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Email{% endblock %}
+
+{% block content %}
+    <div class="email_detail">
+        <b>Sender:</b><br>
+        <div class="email_sender">
+            {{email.sender}}
+        </div>
+        <b>Recipient:</b><br>
+        <div class="email_recipient">
+            {{email.recipient}}
+        </div>
+        <b>Topic:</b><br>
+        <div class="email_topic">
+            {{email.topic}}
+        </div>
+        <b>Mail:</b><br>
+        <div class="email_text">
+            {{email.text}}
+        </div>
+    </div>
+    <div class="update">
+        <a href="{% url 'inbox' %}"><button class="btn_update">Delete Mail</button></a>
+    </div>
+{% endblock %}

@@ -1,23 +1,50 @@
-from django.shortcuts import render
-from .models import Emails
+from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView, DeleteView
+from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
+from .models import Email
 
 
-def inbox(request):
-    emails = Emails.objects.all()
-    return render(request, 'main/inbox.html', {'emails': emails})
+class InboxList(LoginRequiredMixin, ListView):
+    model = Email
+    context_object_name = 'emails'
+    template_name = 'main/inbox_list.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['emails'] = context['emails'].filter(recipient=self.request.user, is_deleted=False)
+        return context
 
 
-def sent(request):
-    return render(request, 'main/sent.html')
+class SentList(LoginRequiredMixin, ListView):
+    model = Email
+    context_object_name = 'emails'
+    template_name = 'main/sent_list.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['emails'] = context['emails'].filter(sender=self.request.user)
+        return context
 
 
-def trash(request):
-    return render(request, 'main/trash.html')
+class EmailDetail(LoginRequiredMixin, DetailView):
+    model = Email
+    context_object_name = 'email'
+    template_name = 'main/email.html'
 
 
-def search(request):
-    return render(request, 'main/search.html')
+class EmailCreate(LoginRequiredMixin, CreateView):
+    model = Email
+    fields = ['recipient', 'topic', 'text']
+    success_url = reverse_lazy('inbox')
+
+    def form_valid(self, form):
+        form.instance.sender = self.request.user
+        return super(EmailCreate, self).form_valid(form)
 
 
-def write(request):
-    return render(request, 'main/write.html')
+class EmailDelete(LoginRequiredMixin, DeleteView):
+    model = Email
+    context_object_name = 'email'
+    success_url = reverse_lazy('inbox')

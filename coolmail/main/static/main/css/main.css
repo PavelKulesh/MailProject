@@ -6,7 +6,7 @@
     width: 300px;
     height: 70px;
     border-radius: 25px;
-    margin-top: 100px;
+    margin-top: 40px;
 }
 
 .btn_inbox:hover {
@@ -120,4 +120,11 @@ li {
     top: 70px;
     font-size: 20px;
     text-align: right;
+}
+
+.folder {
+    font-size: 40px;
+    margin-left: 900px;
+    width: 250px;
+    height: 75px;
 }

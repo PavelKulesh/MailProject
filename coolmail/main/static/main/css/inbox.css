@@ -38,6 +38,12 @@
     margin-top: 10px;
     border-radius: 10px;
     background: #e8e8e8;
+    text-decoration: none;
+}
+
+.email a{
+    color: black;
+    text-decoration: none;
 }
 
 .email:hover {
