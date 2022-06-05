@@ -15,4 +15,5 @@ class Email(models.Model):
         return self.topic
 
     class Meta:
+        indexes = [models.Index(fields=['sender', 'recipient', 'topic', 'text', 'date'])]
         ordering = ['-date']
