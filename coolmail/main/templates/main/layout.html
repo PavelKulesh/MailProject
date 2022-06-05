@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
     <link rel="stylesheet" href="{% static 'main/css/inbox.css' %}">
     <link rel="stylesheet" href="{% static 'main/css/email.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/email_form.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/email_confirm_delete.css' %}">
 </head>
 <body>
     <aside>
@@ -32,6 +34,7 @@
         <ul>
             <li><a href="{% url 'inbox' %}"><button class="btn_inbox">Inbox</button></a></li>
             <li><a href="{% url 'sent' %}"><button class="btn_sent">Sent</button></a></li>
+            <li><a href="{% url 'email-create' %}"><button class="btn_write">Write an Email</button></a></li>
         </ul>
     </aside>
     <main>

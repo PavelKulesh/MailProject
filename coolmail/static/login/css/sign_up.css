@@ -1,0 +1,43 @@
+.home_up {
+    text-align: center;
+    margin-top: 230px;
+    font-size: 50px;
+}
+
+.input_name {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input_surname {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input_passwconf {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.name {
+    height: 40px;
+    border-radius: 10px;
+}
+
+.surname {
+    height: 40px;
+    border-radius: 10px;
+}
+
+.passwconf {
+    width: 400px;
+    height: 40px;
+    border-radius: 10px;
+}
+

@@ -1,0 +1,60 @@
+.delete_form {
+    position: absolute;
+    width: 200px;
+    height: auto;
+    left: 450px;
+    top: 230px;
+    margin-top: 100px;
+    margin-left: 400px;
+}
+
+.message {
+    height: 40px;
+    width: 350px;
+    margin-left: 20px;
+    border-radius: 10px;
+}
+
+.btn_delete {
+    background-color: #141414;
+    color: white;
+    text-align: center;
+    font-size: 17px;
+    width: 150px;
+    height: 40px;
+    border-radius: 25px;
+    margin-left: 90px;
+}
+
+.btn_delete:hover {
+    color: #b0b0b0;
+    transform: scale(1.05);
+    transition: transform .3s ease;
+}
+
+.back {
+    position: absolute;
+    width: 200px;
+    height: auto;
+    left: 450px;
+    top: 230px;
+    margin-top: 190px;
+    margin-left: 515px;
+}
+
+.btn_back {
+    background-color: #141414;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    width: 100px;
+    height: 30px;
+    border-radius: 25px;
+    margin-top: 20px;
+}
+
+.btn_back:hover {
+    color: #b0b0b0;
+    transform: scale(1.05);
+    transition: transform .3s ease;
+}

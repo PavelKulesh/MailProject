@@ -16,12 +16,16 @@
         <div class="email_topic">
             {{email.topic}}
         </div>
+        <b>Date:</b><br>
+        <div class="email_date">
+            {{email.date}}
+        </div>
         <b>Mail:</b><br>
         <div class="email_text">
             {{email.text}}
         </div>
     </div>
-    <div class="update">
-        <a href="{% url 'inbox' %}"><button class="btn_update">Delete Mail</button></a>
+    <div class="delete">
+        <a href="{% url 'email-delete' email.id %}"><button class="btn_delete">Delete Mail</button></a>
     </div>
 {% endblock %}

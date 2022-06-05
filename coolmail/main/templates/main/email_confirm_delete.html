@@ -1,0 +1,16 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Email{% endblock %}
+
+{% block content %}
+
+    <form method="POST" class="delete_form">
+        {% csrf_token %}
+        <p class="message">Are you sure you want to delete the email?</p>
+        <input type="submit" value="Delete" class="btn_delete">
+    </form>
+    <div class="back">
+        <a href="{% url 'inbox' %}"><button class="btn_back">Back</button></a>
+    </div>
+
+{% endblock %}

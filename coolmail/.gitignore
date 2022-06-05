@@ -1,0 +1,8 @@
+venv/
+__pycahce__/
+migrations/
+__init__.py
+.idea/
+db.sqlite3
+.env
+db_django/

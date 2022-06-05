@@ -14,6 +14,7 @@ def home(request):
 
 
 class LoginPage(LoginView):
+    """This class implements authorization"""
     template_name = 'login/sign_in.html'
     fields = '__all__'
     redirect_authenticated_user = True
@@ -26,6 +27,7 @@ class LoginPage(LoginView):
 
 
 class RegisterPage(FormView):
+    """This class implements registration"""
     template_name = 'login/sign_up.html'
     form_class = UserCreationForm
     redirect_authenticated_user = True

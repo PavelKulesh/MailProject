@@ -5,13 +5,19 @@
 {% block folder %}Sent{% endblock %}
 
 {% block content %}
+    <form method="GET" class="search">
+        <input type="text" name="search-area" value="{{search_input}}" class="search_input">
+        <input type="submit" value="Search" class="btn_search">
+    </form>
     <div class="emails_list">
         {% for email in emails %}
             <div class="email">
-                <a href="{% url 'email' email.id %}"><b>{{ email.topic }}</b> {{ email.text|slice:":20" }} <b>{{ email.date }}</b></a>
+                <a href="{% url 'email' email.id %}"><b>{{ email.recipient }}</b> <b>{{ email.topic }}</b> {{ email.text|slice:":20" }} <b>{{ email.date }}</b></a>
             </div>
         {% empty %}
-            MailBox is empty
+            <div class="empty">
+                Folder is empty
+            </div>
         {% endfor %}
     </div>
 {% endblock %}
