@@ -1,1 +1,1 @@
-web: gunicorn coolmail.wsgi --timeout 15 --keep-alive 5 --log-level debug
+web: gunicorn coolmail.coolmail.wsgi --timeout 15 --keep-alive 5 --log-level debug

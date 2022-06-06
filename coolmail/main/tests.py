@@ -1,50 +1,48 @@
-from django.test import TestCase, Client
-from django.urls import reverse
+from django.contrib.auth import get_user_model
+from django.test import TestCase
+from django.urls import reverse, reverse_lazy
 
-from django.contrib.auth.models import User
+from main.models import Email
 
 
-class TestProject(TestCase):
-    """Class for testing project"""
+class EmailTests(TestCase):
 
-    def setUp(self) -> None:
-        # self.tag = Tag(tag_name='name')
-        # self.news = NewsItem(title='title', description='description')
-        # self.use = User(username='user')
-        # self.prof = Profile(user=self.use)
+    def setUp(self):
+        self.user = get_user_model().objects.create_user(
+            username='testuser',
+            password='password',
+        )
 
-        self.test_client = Client()
-        self.home_url = reverse('news-index')
-        self.create_url = reverse('news-create')
-        self.about_url = reverse('news-about')
-        self.reqister_url = reverse('register')
-        self.login_url = reverse('login')
-        self.logout_url = reverse('logout')
-        self.profile_url = reverse('profile')
+        self.email = Email.objects.create(
+            topic='topic',
+            text='text',
+            sender=self.user,
+        )
 
-    def test_users_views_profile(self):
-        respon = self.test_client.post(self.profile_url)
+    def test_string_representation(self):
+        email = Email(topic='topic')
+        self.assertEqual(str(email), email.topic)
 
-    def test_users_views_logout(self):
-        respon = self.test_client.get(self.logout_url)
+    def test_email_content(self):
+        self.assertEqual(f'{self.email.topic}', 'topic')
+        self.assertEqual(f'{self.email.sender}', 'testuser')
+        self.assertEqual(f'{self.email.text}', 'text')
 
-    def test_users_views_login(self):
-        respon = self.test_client.get(self.login_url)
+    def test_email_list_view(self):
+        response = self.client.get(reverse('inbox'))
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'text')
+        self.assertTemplateUsed(response, 'main/inbox_list.html')
 
-    def test_users_views_register(self):
-        respon = self.test_client.get(self.reqister_url)
+    def test_email_detail_view(self):
+        response = self.client.get(reverse('inbox'))
+        no_response = self.client.get('/email/19823/')
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(no_response.status_code, 404)
+        self.assertContains(response, 'topic')
+        self.assertTemplateUsed(response, 'main/inbox_list.html')
 
-    def test_user_views_create(self):
-        respon = self.test_client.get(self.create_url)
-
-    def test_user_views_about(self):
-        respon = self.test_client.get(self.about_url)
-
-    def test_tag_str(self):
-        self.assertEqual(str(self.tag), 'name')
-
-    def test_newsitem_str(self):
-        self.assertEqual(str(self.news), 'sender')
-
-    def test_profile_str(self):
-        self.assertEqual(str(self.prof), 'username')
+    def test_email_delete_view(self):
+        response = self.client.post(
+            reverse('email-delete', args='6'))
+        self.assertEqual(response.status_code, 302)
