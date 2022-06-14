@@ -6,6 +6,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Email
 import logging
+from .tasks import email_created
 
 
 logger = logging.getLogger('django')
@@ -65,6 +66,8 @@ class EmailCreate(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.sender = self.request.user
         return super(EmailCreate, self).form_valid(form)
+
+    email_created.delay(model.id)
 
 
 class EmailDelete(LoginRequiredMixin, DeleteView):
